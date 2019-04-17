@@ -1,0 +1,29 @@
+Interface  {
+  Inputs {
+  }
+  Outputs {
+  }
+  Parameters {
+    Field color     { type = color value = "0.5 0.2 0.1" }
+    Field Iso     { type = Integer value = "600" }
+  }
+}
+Commands {
+  Source = $(LOCAL)/Aneurysm.py
+}
+Window Viewer{
+  Button{
+    title   = "Aneurysm"
+    command = Aneurysm
+  }
+  Category ColorIsosurface {
+    Field color {}  
+  }
+  FieldListener color { command = changeColor }
+  Category Isovalue {
+    Field Iso {}  
+  }
+  FieldListener Iso { command = changeIso }
+
+  }
+  
